@@ -8,6 +8,6 @@ Développeurs:
 
 - Maxence Larmet
 - Guez Louzolo
-- Elie Bihanic
+- Elie Bihannic
 - Bertille Menguy
 
