@@ -7,7 +7,7 @@ Application « Evénements »
 Développeurs:
 
 - Maxence Larmet
-- Guez Louzoulou
+- Guez Louzolo
 - Elie Bihanic
 - Bertille Menguy
 
