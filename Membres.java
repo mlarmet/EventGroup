@@ -1,16 +1,37 @@
 import java.util.Date;
 
+/**Class membre.
+ */
 public class Membres {
-
+  /**Description nom du membre.*/
   private String nom;
+  /**Description prenom du membre.*/
   private String prenom;
+  /**Description adresse mail du membre.*/
   private String adresseMail;
+  /**Description pseudo du membre.*/
   private String pseudo;
+  /**Description mot de passe du membre.*/
   private String motDePasse;
+  /**Description adresse postale du membre.*/
   private String adressePostale;
+  /**Description date de naissance du membre.*/
   private Date dateNaissance;
+  /**Description lieu de naissance du membre.*/
   private String lieuNaissance;
 
+  /**
+   * Constructeur de la classe Membres.
+
+   * @param nom nom du membre
+   * @param prenom prenom du membre
+   * @param adresseMail adresse email du membre
+   * @param pseudo pseudo du membre
+   * @param motDePasse mot de passe du membre
+   * @param adressePostale adresse du membre
+   * @param dateNaissance date de naissance du membre
+   * @param lieuNaissance lieu de naissance du membre
+   */
   public Membres(String nom, String prenom, String adresseMail, String pseudo, String motDePasse,
       String adressePostale, Date dateNaissance, String lieuNaissance) {
 
