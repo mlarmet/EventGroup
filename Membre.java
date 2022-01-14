@@ -1,9 +1,11 @@
+package implantation;
+
 import java.util.Date;
 
 /**
  * Class membre.
  */
-public class Membres {
+public class Membre {
   /** Description nom du membre. */
   private String nom;
   /** Description prenom du membre. */
@@ -14,8 +16,8 @@ public class Membres {
   private String pseudo;
   /** Description mot de passe du membre. */
   private String motDePasse;
-  /** Description adresse postale du membre. */
-  private String adressePostale;
+  /** Description ville de résidence du membre. */
+  private String villeDeResidence;
   /** Description date de naissance du membre. */
   private Date dateNaissance;
   /** Description lieu de naissance du membre. */
@@ -29,19 +31,19 @@ public class Membres {
    * @param adresseMail adresse email du membre
    * @param pseudo pseudo du membre
    * @param motDePasse mot de passe du membre
-   * @param adressePostale adresse du membre
+   * @param villeDeResidence adresse du membre
    * @param dateNaissance date de naissance du membre
    * @param lieuNaissance lieu de naissance du membre
    */
-  public Membres(String nom, String prenom, String adresseMail, String pseudo, String motDePasse,
-      String adressePostale, Date dateNaissance, String lieuNaissance) {
+  public Membre(String nom, String prenom, String adresseMail, String pseudo, String motDePasse,
+      String villeDeResidence, Date dateNaissance, String lieuNaissance) {
 
     this.nom = nom;
     this.prenom = prenom;
     this.adresseMail = adresseMail;
     this.pseudo = pseudo;
     this.motDePasse = motDePasse;
-    this.adressePostale = adressePostale;
+    this.villeDeResidence = villeDeResidence;
     this.dateNaissance = dateNaissance;
     this.lieuNaissance = lieuNaissance;
   }
@@ -136,21 +138,21 @@ public class Membres {
     return 1;
   }
 
-  public String getAdressePostale() {
-    return adressePostale;
+  public String getVilleDeResidence() {
+    return this.villeDeResidence;
   }
 
   /**
-   * Modifie l'adresse postal du membre.
+   * Modifie la ville de résidence du membre.
    *
-   * @param adressePostale nouvelle adresse du membre
-   * @return -1 si la nouvelle adresse est vide, 1 si la modification est correct
+   * @param villeDeResidence nouvelle ville de résidence du membre
+   * @return -1 si la nouvelle ville de résidence est vide, 1 si la modification est correct
    */
-  public int setAdressePostale(String adressePostale) {
-    if (adressePostale.isBlank() || adressePostale.isEmpty()) {
+  public int setVilleDeResidence(String villeDeResidence) {
+    if (villeDeResidence.isBlank() || villeDeResidence.isEmpty()) {
       return -1;
     }
-    this.adressePostale = adressePostale;
+    this.villeDeResidence = villeDeResidence;
     return 1;
   }
 

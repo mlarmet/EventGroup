@@ -1,3 +1,5 @@
+package implantation;
+
 import java.time.LocalDateTime;
 
 /**
@@ -104,7 +106,7 @@ public class Evenement {
   }
 
   /**
-   * Modifie la date et l'horraire de l'image de l'evenement.
+   * Modifie la date et l'horaire de l'image de l'evenement.
    *
    * @param dateHoraire nouveau nom de l'image de l'evenement
    * @return -1 si la nouvelle date est inférieur a la date actuelle, 1 si la modification est
@@ -124,14 +126,41 @@ public class Evenement {
   }
 
   /**
-   * Modifie le lieu de l'evenement.
+   * Modifie le nom du lieu de l'evenement.
    *
-   * @param lieu nouveau lieu de l'evenement
-   * @return -1 si le nouveau lieu est incorrect, 1 si la modification est correct
+   * @param nom nouveau nom du lieu de l'evenement
+   * @return -1 si le nouveau nom est incorrect, 1 si la modification est correct
    */
-  public int setLieu(Lieu lieu) {
-    // TODO test lieu incorrect ??
-    this.lieu = lieu;
+  public int setNomLieu(String nom) {
+    if (this.lieu.setNom(nom) == -1) {
+      return -1;
+    }
+    return 1;
+  }
+
+  /**
+   * Modifie le descriptif du lieu de l'evenement.
+   *
+   * @param descriptif nouveau descriptif du lieu de l'evenement
+   * @return -1 si le nouveau descriptif est incorrect, 1 si la modification est correct
+   */
+  public int setDescriptifLieu(String descriptif) {
+    if (this.lieu.setDescriptif(descriptif) == -1) {
+      return -1;
+    }
+    return 1;
+  }
+
+  /**
+   * Modifie le lien google du lieu de l'evenement.
+   *
+   * @param lien nouveau lien google du lieu de l'evenement
+   * @return -1 si le nouveau lien est incorrect, 1 si la modification est correct
+   */
+  public int setLienLieu(String lien) {
+    if (this.lieu.setLien(lien) == -1) {
+      return -1;
+    }
     return 1;
   }
 
@@ -146,7 +175,6 @@ public class Evenement {
    * @return -1 si le nouveau type est incorrect, 1 si la modification est correct
    */
   public int setType(TypeEvenement type) {
-    // TODO test type incorrect
     this.type = type;
     return 1;
   }

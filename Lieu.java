@@ -1,3 +1,5 @@
+package implantation;
+
 /** Classe Lieu. */
 public class Lieu {
   /** Description nom du lieu. */
