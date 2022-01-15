@@ -30,10 +30,10 @@ public class Lieu {
    * Modifie le nom du lieu.
    *
    * @param nom nouveau nom du lieu
-   * @return -1 si le nouveau nom est vide, 1 si la modification est correct
+   * @return -1 si le nouveau nom est vide ou null, 1 si la modification est correcte
    */
   public int setNom(String nom) {
-    if (nom.isBlank() || nom.isEmpty()) {
+    if (nom == null ||  nom.isBlank() || nom.isEmpty()) {
       return -1;
     }
 
@@ -49,10 +49,10 @@ public class Lieu {
    * Modifie la description de l'evenement.
    *
    * @param descriptif nouvelle description du lieu
-   * @return -1 si la nouvelle description est vide, 1 si la modification est correct
+   * @return -1 si la nouvelle description est vide ou null, 1 si la modification est correcte
    */
   public int setDescriptif(String descriptif) {
-    if (descriptif.isBlank() || descriptif.isEmpty()) {
+    if (descriptif == null || descriptif.isBlank() || descriptif.isEmpty()) {
       return -1;
     }
     
@@ -68,10 +68,10 @@ public class Lieu {
    * Modifie la description de l'evenement.
    *
    * @param lien nouveau lien google map du lieu
-   * @return -1 si le nouveau lien est vide, 1 si la modification est correct
+   * @return -1 si le nouveau lien est vide ou null, 1 si la modification est correcte
    */
   public int setLien(String lien) {
-    if (lien.isBlank() || lien.isEmpty()) {
+    if (lien == null || lien.isBlank() || lien.isEmpty()) {
       return -1;
     }
     

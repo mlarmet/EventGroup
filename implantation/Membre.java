@@ -53,13 +53,13 @@ public class Membre {
   }
 
   /**
-   * Modifie la description de l'evenement.
+   * Modifie le nom du membre.
    *
    * @param nom nouveau nom du membre
-   * @return -1 si le nouveau nom est vide, 1 si la modification est correct
+   * @return -1 si le nouveau nom est vide ou null, 1 si la modification est correcte
    */
   public int setNom(String nom) {
-    if (nom.isBlank() || nom.isEmpty()) {
+    if (nom == null || nom.isBlank() || nom.isEmpty()) {
       return -1;
     }
     this.nom = nom;
@@ -74,10 +74,10 @@ public class Membre {
    * Modifie le prenom du membre.
    *
    * @param prenom nouveau prenom du membre
-   * @return -1 si le nouveau prenom est vide, 1 si la modification est correct
+   * @return -1 si le nouveau prenom est vide ou null, 1 si la modification est correcte
    */
   public int setPrenom(String prenom) {
-    if (prenom.isBlank() || prenom.isEmpty()) {
+    if (prenom == null || prenom.isBlank() || prenom.isEmpty()) {
       return -1;
     }
     this.prenom = prenom;
@@ -92,10 +92,10 @@ public class Membre {
    * Modifie l'adresse email du membre.
    *
    * @param adresseMail nouvel emai du membre
-   * @return -1 si le nouvel email est vide, 1 si la modification est correct
+   * @return -1 si le nouvel email est vide ou null, 1 si la modification est correcte
    */
   public int setAdresseMail(String adresseMail) {
-    if (adresseMail.isBlank() || adresseMail.isEmpty()) {
+    if (adresseMail == null || adresseMail.isBlank() || adresseMail.isEmpty()) {
       return -1;
     }
     this.adresseMail = adresseMail;
@@ -110,10 +110,10 @@ public class Membre {
    * Modifie le pseudo du membre.
    *
    * @param pseudo nouveau pseudo du membre
-   * @return -1 si le nouveau pseudo est vide, 1 si la modification est correct
+   * @return -1 si le nouveau pseudo est vide ou null, 1 si la modification est correcte
    */
   public int setPseudo(String pseudo) {
-    if (pseudo.isBlank() || pseudo.isEmpty()) {
+    if (pseudo == null || pseudo.isBlank() || pseudo.isEmpty()) {
       return -1;
     }
     this.pseudo = pseudo;
@@ -128,10 +128,10 @@ public class Membre {
    * Modifie le mot de passe du membre.
    *
    * @param motDePasse nouveau mot de passe du membre
-   * @return -1 si le nouveau mot de passe est vide, 1 si la modification est correct
+   * @return -1 si le nouveau mot de passe est vide ou null, 1 si la modification est correcte
    */
   public int setMotDePasse(String motDePasse) {
-    if (motDePasse.isBlank() || motDePasse.isEmpty()) {
+    if (motDePasse == null || motDePasse.isBlank() || motDePasse.isEmpty()) {
       return -1;
     }
     this.motDePasse = motDePasse;
@@ -146,10 +146,11 @@ public class Membre {
    * Modifie la ville de résidence du membre.
    *
    * @param villeDeResidence nouvelle ville de résidence du membre
-   * @return -1 si la nouvelle ville de résidence est vide, 1 si la modification est correct
+   * @return -1 si la nouvelle ville de résidence est vide ou null, 1 si la modification est
+   *         correcte
    */
   public int setVilleDeResidence(String villeDeResidence) {
-    if (villeDeResidence.isBlank() || villeDeResidence.isEmpty()) {
+    if (villeDeResidence == null || villeDeResidence.isBlank() || villeDeResidence.isEmpty()) {
       return -1;
     }
     this.villeDeResidence = villeDeResidence;
@@ -166,7 +167,7 @@ public class Membre {
    *
    * @param dateNaissance nouvelle date de naissance du membre
    * @return -1 si la nouvelle date est supérieur à la date actuelle, 1 si la modification est
-   *         correct
+   *         correcte
    */
   public int setDateNaissance(Date dateNaissance) {
     // si sup à 0 alors dateNaissance est supérieur à aujourd'hui.
@@ -186,10 +187,10 @@ public class Membre {
    * Modifie le lieu de naissance du membre.
    *
    * @param lieuNaissance nouveau lieu de naissance du membre
-   * @return -1 si le nouveau lieu est vide, 1 si la modification est correct
+   * @return -1 si le nouveau lieu est vide ou null, 1 si la modification est correcte
    */
   public int setLieuNaissance(String lieuNaissance) {
-    if (lieuNaissance.isBlank() || lieuNaissance.isEmpty()) {
+    if (lieuNaissance == null || lieuNaissance.isBlank() || lieuNaissance.isEmpty()) {
       return -1;
     }
     this.lieuNaissance = lieuNaissance;
