@@ -20,10 +20,15 @@ class MembreTest {
   Membre membre = new Membre("Lopez", "Roger", "roger.lopez@gmail.com", "lroger", "lroger29",
       "Brest", creerDate("10-02-1990"), "Rennes");
 
-  // Tests sur la méthode setNom()
+  // Tests sur la méthode setNom
   @Test
   void testSetNomCorrect() {
     assertEquals(1, membre.setNom("Martinez"));
+  }
+  
+  @Test
+  void testSetNomNull() {
+    assertEquals(-1, membre.setNom(null));
   }
 
   @Test
@@ -37,10 +42,15 @@ class MembreTest {
   }
 
 
-  // Tests sur la méthode setPrenom()
+  // Tests sur la méthode setPrenom
   @Test
   void testSetPrenomCorrect() {
     assertEquals(1, membre.setPrenom("Louis"));
+  }
+  
+  @Test
+  void testSetPrenomNull() {
+    assertEquals(-1, membre.setPrenom(null));
   }
 
   @Test
@@ -54,10 +64,15 @@ class MembreTest {
   }
 
 
-  // Tests sur la méthode setAdresseMail()
+  // Tests sur la méthode setAdresseMail
   @Test
   void testSetAdresseMailCorrect() {
     assertEquals(1, membre.setAdresseMail("r.lopez@gmail.com"));
+  }
+  
+  @Test
+  void testSetAdresseMailNull() {
+    assertEquals(-1, membre.setAdresseMail(null));
   }
 
   @Test
@@ -71,10 +86,15 @@ class MembreTest {
   }
 
 
-  // Tests sur la méthode setPseudo()
+  // Tests sur la méthode setPseudo
   @Test
   void testSetPseudoCorrect() {
     assertEquals(1, membre.setPseudo("lolo29"));
+  }
+  
+  @Test
+  void testSetPseudoNull() {
+    assertEquals(-1, membre.setPseudo(null));
   }
 
   @Test
@@ -88,10 +108,15 @@ class MembreTest {
   }
 
 
-  // Tests sur la méthode setMotDePasse()
+  // Tests sur la méthode setMotDePasse
   @Test
   void testSetMotDePasseCorrect() {
     assertEquals(1, membre.setMotDePasse("*_lolo29"));
+  }
+  
+  @Test
+  void testSetMotDePasseNull() {
+    assertEquals(-1, membre.setMotDePasse(null));
   }
 
   @Test
@@ -105,10 +130,15 @@ class MembreTest {
   }
 
 
-  // Tests sur la méthode setVilleDeResidence()
+  // Tests sur la méthode setVilleDeResidence
   @Test
   void testSetVilleDeResidenceCorrect() {
     assertEquals(1, membre.setVilleDeResidence("Quimper"));
+  }
+  
+  @Test
+  void testSetVilleDeResidenceNull() {
+    assertEquals(-1, membre.setVilleDeResidence(null));
   }
 
   @Test
@@ -122,11 +152,16 @@ class MembreTest {
   }
 
 
-  // Tests sur la méthode setDateNaissance()
+  // Tests sur la méthode setDateNaissance
 
   @Test
   void testSetDateNaissanceInferieureDateCourante() {
     assertEquals(1, membre.setDateNaissance(creerDate("15-08-1995")));
+  }
+  
+  @Test
+  void testSetDateNaissanceSuperieureDateNull() {
+    assertEquals(-1, membre.setDateNaissance(null));
   }
 
   @Test
@@ -139,6 +174,11 @@ class MembreTest {
   @Test
   void testSetLieuNaissanceCorrect() {
     assertEquals(1, membre.setLieuNaissance("Saint-Brieuc"));
+  }
+  
+  @Test
+  void testSetLieuNaissanceNull() {
+    assertEquals(-1, membre.setLieuNaissance(null));
   }
 
   @Test
