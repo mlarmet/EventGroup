@@ -28,7 +28,7 @@ public interface GestionEvenements {
    * @param villeDeResidence adresse du membre
    * @param dateNaissance date de naissance du membre
    * @param lieuNaissance lieu de naissance du membre
-   * @return 0 si au moins un des arguments est incorrect, -1 si le pseudo est deja utilise ou si le
+   * @return 0 si au moins un argument est incorrect, -1 si le pseudo est deja utilise ou si le
    *         membre existe deja, 1 si l'ajout est fait
    */
   static int ajouterMembre(String nom, String prenom, String adresseMail, String pseudo,
