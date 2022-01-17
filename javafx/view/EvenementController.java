@@ -1,7 +1,7 @@
 package eventgroup.view;
 
-import java.util.function.Consumer;
 import eventgroup.MainApp;
+import java.util.function.Consumer;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -10,6 +10,7 @@ import javafx.scene.control.TableView;
 @SuppressWarnings("rawtypes")
 public class EvenementController {
 
+  @SuppressWarnings("unused")
   private MainApp mainApp;
   @FXML
   private TableView tableView;

@@ -34,7 +34,7 @@
       </HBox>
       <TableView fx:id="tableView" pickOnBounds="false">
          <columns>
-            <TableColumn fx:id="colPseudo" editable="false" prefWidth="75.0" resizable="false" style="-fx-background-color: #EEF2FF;" text="Pseudo" />
+            <TableColumn fx:id="colPseudo" editable="false" prefWidth="75.0" resizable="false" style="-fx-background-color: #EEF2FF;" text="${basedir}" />
             <TableColumn fx:id="colPrenom" editable="false" prefWidth="75.0" resizable="false" style="-fx-background-color: #EEF2FF;" text="Prenom" />
             <TableColumn fx:id="colNom" editable="false" prefWidth="75.0" resizable="false" style="-fx-background-color: #EEF2FF;" text="Nom" />
             <TableColumn fx:id="colNaissance" editable="false" prefWidth="100.0" resizable="false" style="-fx-background-color: #EEF2FF;" text="Naissance" />

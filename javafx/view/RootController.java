@@ -41,6 +41,9 @@ public class RootController {
         divider.setPosition(0.15);
       }
     });
+    
+    //calendarImgView.setImage(new Image("file:resources/icon-calendrier.png"));
+    
 
     this.showMembreView();
   }

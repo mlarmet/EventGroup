@@ -12,17 +12,17 @@
   <items>
       <VBox id="leftPane" alignment="TOP_CENTER" spacing="50.0" style="-fx-background-color: #68709f;">
          <children>
-            <ImageView id="pageEvenement" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#showEvenementView" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="50.0" fitWidth="50.0" onMouseClicked="#showEvenementView" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../ressources/icon-calendrier.png" />
+                  <Image url="file:resources/icon-calendrier.png" />
                </image>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
-            <ImageView id="pageMembre" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#showMembreView" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="50.0" fitWidth="50.0" onMouseClicked="#showMembreView" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../ressources/icon-membre.png" />
+                  <Image url="file:resources/icon-membre.png" />
                </image>
                <cursor>
                   <Cursor fx:constant="HAND" />

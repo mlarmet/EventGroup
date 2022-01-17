@@ -1,17 +1,16 @@
 package eventgroup.view;
 
-import java.util.function.Consumer;
 import eventgroup.MainApp;
+import java.util.function.Consumer;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TableView.ResizeFeatures;
-import javafx.util.Callback;
 
 /** Classe de controle de la page membre. */
 @SuppressWarnings("rawtypes")
 public class MembreController {
 
+  @SuppressWarnings("unused")
   private MainApp mainApp;
 
 

@@ -3,17 +3,12 @@ package eventgroup;
 import eventgroup.view.RootController;
 import java.io.IOException;
 import javafx.application.Application;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.ListChangeListener;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.SplitPane;
 import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableColumnBase;
 import javafx.scene.control.TableView;
-import javafx.scene.layout.Region;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 /** Appliation javafx. */
@@ -39,6 +34,7 @@ public class MainApp extends Application {
 
       // Show the scene containing the root layout.
       Scene scene = new Scene(rootLayout);
+      
 
       primaryStage.setScene(scene);
       primaryStage.setResizable(false);
@@ -68,7 +64,7 @@ public class MainApp extends Application {
         change.next();
         if (change.wasReplaced() && !suspended) {
           this.suspended = true;
-          table.getColumns().setAll(columns);
+          table.getColumns().setAll(((Object[]) columns));
           this.suspended = false;
         }
       }

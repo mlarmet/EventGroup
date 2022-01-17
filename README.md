@@ -11,3 +11,7 @@ Développeurs:
 - Elie Bihannic
 - Bertille Menguy
 
+Etape pour installer l'application :
+
+1 - installation : exécuter l'installeur "EventGroup.exe"
+2 - lancement : exécuter la commande suivante dans un terminal Windows : "%LOCALAPPDATA%/EventGroup/EventGroup.exe"
