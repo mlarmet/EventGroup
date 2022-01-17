@@ -3,7 +3,7 @@ package implantation;
 import java.util.Date;
 
 /**
- * Class membre.
+ * Description de la classe Membre.
  */
 public class Membre {
   /** Description nom du membre. */
@@ -24,7 +24,7 @@ public class Membre {
   private String lieuNaissance;
 
   /**
-   * Constructeur de la classe Membres.
+   * Constructeur de la classe Membre.
    *
    * @param nom nom du membre
    * @param prenom prenom du membre
@@ -49,7 +49,7 @@ public class Membre {
   }
 
   public String getNom() {
-    return nom;
+    return this.nom;
   }
 
   /**
@@ -67,7 +67,7 @@ public class Membre {
   }
 
   public String getPrenom() {
-    return prenom;
+    return this.prenom;
   }
 
   /**
@@ -85,7 +85,7 @@ public class Membre {
   }
 
   public String getAdresseMail() {
-    return adresseMail;
+    return this.adresseMail;
   }
 
   /**
@@ -103,7 +103,7 @@ public class Membre {
   }
 
   public String getPseudo() {
-    return pseudo;
+    return this.pseudo;
   }
 
   /**
@@ -121,7 +121,7 @@ public class Membre {
   }
 
   public String getMotDePasse() {
-    return motDePasse;
+    return this.motDePasse;
   }
 
   /**
@@ -146,7 +146,7 @@ public class Membre {
    * Modifie la ville de résidence du membre.
    *
    * @param villeDeResidence nouvelle ville de résidence du membre
-   * @return -1 si la nouvelle ville de résidence est vide ou null, 1 si la modification est
+   * @return -1 si la nouvelle ville de résidence est vide ou nulle, 1 si la modification est
    *         correcte
    */
   public int setVilleDeResidence(String villeDeResidence) {
@@ -159,19 +159,19 @@ public class Membre {
 
 
   public Date getDateNaissance() {
-    return dateNaissance;
+    return this.dateNaissance;
   }
 
   /**
    * Modifie la date de naissance du membre.
    *
    * @param dateNaissance nouvelle date de naissance du membre
-   * @return -1 si la nouvelle date est supérieur à la date actuelle, 1 si la modification est
-   *         correcte
+   * @return -1 si la nouvelle date est nulle ou supérieure à la date actuelle, 1 si la modification
+   *         est correcte
    */
   public int setDateNaissance(Date dateNaissance) {
     // si sup à 0 alors dateNaissance est supérieur à aujourd'hui.
-    if (dateNaissance.compareTo(new Date()) > 0) {
+    if (dateNaissance == null || dateNaissance.compareTo(new Date()) > 0) {
       return -1;
     }
 
@@ -180,7 +180,7 @@ public class Membre {
   }
 
   public String getLieuNaissance() {
-    return lieuNaissance;
+    return this.lieuNaissance;
   }
 
   /**
@@ -197,6 +197,24 @@ public class Membre {
     return 1;
   }
 
-
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj) {
+      return true;
+    }
+    if (obj == null) {
+      return false;
+    }
+    if (!(obj instanceof Membre)) {
+      return false;
+    }
+    Membre membre = (Membre) obj;
+    return (this.nom.equals(membre.nom) && this.prenom.equals(membre.prenom)
+        && this.adresseMail.equals(membre.adresseMail) && this.pseudo.equals(membre.pseudo)
+        && this.motDePasse.equals(membre.motDePasse)
+        && this.villeDeResidence.equals(membre.villeDeResidence)
+        && this.dateNaissance.equals(membre.dateNaissance)
+        && this.lieuNaissance.equals(membre.lieuNaissance));
+  }
 
 }

@@ -3,22 +3,22 @@ package implantation;
 import java.time.LocalDateTime;
 
 /**
- * Description de la classe evenement.
+ * Description de la classe Evenement.
  */
 public class Evenement {
-  /** Description Nom de l evenement. */
+  /** Description nom de l'evenement. */
   private String nom;
   /** Description description de l'evenement. */
   private String descriptif;
-  /** Description image de profile de l'evenement. */
+  /** Description image de profil de l'evenement. */
   private String image;
-  /** Description date et horraire de l'evenement. */
+  /** Description date et horaire de l'evenement. */
   private LocalDateTime dateHoraire;
   /** Description lieu de l'evenement. */
   private Lieu lieu;
   /** Description type de l'evenement. */
   private TypeEvenement type;
-  /** Description nombre maximum de personne dans l'evenement. */
+  /** Description nombre maximum de personnes dans l'evenement. */
   private int nombreMaxPersonne;
 
   /**
@@ -26,11 +26,11 @@ public class Evenement {
    *
    * @param nom nom de l'evenement
    * @param descriptif description de l'evenement
-   * @param image image de profile de l'evenement
-   * @param dateHoraire date et horraire de l'evenement
+   * @param image image de profil de l'evenement
+   * @param dateHoraire date et horaire de l'evenement
    * @param lieu lieu de l'evenement
    * @param type type de l'evenement
-   * @param nombreMaxPersonne nombre maximum de personne dans l'evenement
+   * @param nombreMaxPersonne nombre maximum de personnes dans l'evenement
    */
   public Evenement(String nom, String descriptif, String image, LocalDateTime dateHoraire,
       Lieu lieu, TypeEvenement type, int nombreMaxPersonne) {
@@ -44,7 +44,7 @@ public class Evenement {
   }
 
   public String getNom() {
-    return nom;
+    return this.nom;
   }
 
   /**
@@ -63,14 +63,14 @@ public class Evenement {
   }
 
   public String getDescriptif() {
-    return descriptif;
+    return this.descriptif;
   }
 
   /**
    * Modifie la description de l'evenement.
    *
    * @param descriptif nouvelle description de l'evenement
-   * @return -1 si la nouvelle description est vide ou null, 1 si la modification est correcte
+   * @return -1 si la nouvelle description est vide ou nulle, 1 si la modification est correcte
    */
   public int setDescriptif(String descriptif) {
     if (descriptif == null || descriptif.isBlank() || descriptif.isEmpty()) {
@@ -83,17 +83,17 @@ public class Evenement {
   }
 
   public String getImage() {
-    return image;
+    return this.image;
   }
 
   /**
    * Modifie le nom de l'image de l'evenement.
    *
    * @param image nouveau nom de l'image de l'evenement
-   * @return -1 si le nouveau est nom est vide ou null, 1 si la modification est correcte
+   * @return -1 si le nouveau est nom est vide, 1 si la modification est correcte
    */
   public int setImage(String image) {
-    if (image == null || image.isBlank() || image.isEmpty()) {
+    if (image.isBlank() || image.isEmpty()) {
       return -1;
     }
 
@@ -102,18 +102,18 @@ public class Evenement {
   }
 
   public LocalDateTime getDateHoraire() {
-    return dateHoraire;
+    return this.dateHoraire;
   }
 
   /**
-   * Modifie la date et l'horaire de l'image de l'evenement.
+   * Modifie la date et l'horaire de l'evenement.
    *
-   * @param dateHoraire nouveau nom de l'image de l'evenement
-   * @return -1 si la nouvelle date est inférieur a la date actuelle, 1 si la modification est
-   *         correcte
+   * @param dateHoraire date et horaire de l'evenement
+   * @return -1 si la nouvelle date est nulle ou est inférieure a la date actuelle, 1 si la
+   *         modification est correcte
    */
   public int setDateHoraire(LocalDateTime dateHoraire) {
-    if (dateHoraire.isBefore(LocalDateTime.now())) {
+    if (dateHoraire == null || dateHoraire.isBefore(LocalDateTime.now())) {
       return -1;
     }
 
@@ -122,19 +122,20 @@ public class Evenement {
   }
 
   public Lieu getLieu() {
-    return lieu;
+    return this.lieu;
   }
 
   /**
    * Modifie le nom du lieu de l'evenement.
    *
    * @param nom nouveau nom du lieu de l'evenement
-   * @return -1 si le nouveau nom est incorrecte, 1 si la modification est correcte
+   * @return -1 si le nouveau nom est incorrect (null ou vide), 1 si la modification est correcte
    */
   public int setNomLieu(String nom) {
     if (this.lieu.setNom(nom) == -1) {
       return -1;
     }
+
     return 1;
   }
 
@@ -142,7 +143,8 @@ public class Evenement {
    * Modifie le descriptif du lieu de l'evenement.
    *
    * @param descriptif nouveau descriptif du lieu de l'evenement
-   * @return -1 si le nouveau descriptif est incorrecte, 1 si la modification est correcte
+   * @return -1 si le nouveau descriptif est incorrect (null ou vide), 1 si la modification est
+   *         correcte
    */
   public int setDescriptifLieu(String descriptif) {
     if (this.lieu.setDescriptif(descriptif) == -1) {
@@ -155,7 +157,7 @@ public class Evenement {
    * Modifie le lien google du lieu de l'evenement.
    *
    * @param lien nouveau lien google du lieu de l'evenement
-   * @return -1 si le nouveau lien est incorrecte, 1 si la modification est correcte
+   * @return -1 si le nouveau lien est incorrect (null ou vide), 1 si la modification est correcte
    */
   public int setLienLieu(String lien) {
     if (this.lieu.setLien(lien) == -1) {
@@ -165,14 +167,14 @@ public class Evenement {
   }
 
   public TypeEvenement getType() {
-    return type;
+    return this.type;
   }
 
   /**
    * Modifie le type de l'evenement.
    *
    * @param type nouveau type de l'evenement
-   * @return -1 si le nouveau type est incorrecte, 1 si la modification est correcte
+   * @return -1 si le nouveau type est null, 1 si la modification est correcte
    */
   public int setType(TypeEvenement type) {
     if (type == null) {
@@ -183,11 +185,11 @@ public class Evenement {
   }
 
   public int getNombreMaxPersonne() {
-    return nombreMaxPersonne;
+    return this.nombreMaxPersonne;
   }
 
   /**
-   * Modifie le nombre maximum de personne à l'evenement.
+   * Modifie le nombre maximum de personnes à l'evenement.
    *
    * @param nombreMaxPersonne nouveau nombre max de personne de l'evenement
    * @return -1 si le nouveau nombre est negatif ou égale à 0, 1 si la modification est correcte
@@ -200,6 +202,22 @@ public class Evenement {
     return 1;
   }
 
-
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj) {
+      return true;
+    }
+    if (obj == null) {
+      return false;
+    }
+    if (!(obj instanceof Evenement)) {
+      return false;
+    }
+    Evenement evenement = (Evenement) obj;
+    return (this.nom.equals(evenement.nom) && this.descriptif.equals(evenement.descriptif)
+        && this.image.equals(evenement.image) && this.dateHoraire.equals(evenement.dateHoraire)
+        && this.lieu.equals(evenement.lieu) && this.type.equals(evenement.type)
+        && this.nombreMaxPersonne == evenement.nombreMaxPersonne);
+  }
 
 }

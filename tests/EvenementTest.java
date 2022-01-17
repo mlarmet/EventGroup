@@ -10,16 +10,21 @@ import java.time.Month;
 import org.junit.jupiter.api.Test;
 
 class EvenementTest {
-  Lieu lieu = new Lieu("Brest Arena", "desc.", "link");
+  Lieu lieu = new Lieu("Brest Arena", "centre", "link");
   TypeEvenement type = TypeEvenement.REPAS;
-  Evenement evenement = new Evenement("MeetMeet", "Rencontre", "img.jpg",
-      LocalDateTime.of(2022, Month.MAY, 20, 13, 45, 30), lieu, type, 12);
-
-
-  // Tests sur la méthode setNom()
+  Evenement evenement = new Evenement("MeetMeet 2022", "Rencontre", "img.jpg",
+      LocalDateTime.of(2022, Month.MAY, 20, 13, 45, 0), lieu, type, 12);
+  
+  
+  // Tests sur la méthode setNom
   @Test
   void testSetNomCorrect() {
     assertEquals(1, evenement.setNom("JustMeet"));
+  }
+  
+  @Test
+  void testSetNomNull() {
+    assertEquals(-1, evenement.setNom(null));
   }
 
   @Test
@@ -33,10 +38,15 @@ class EvenementTest {
   }
 
 
-  // Tests sur la méthode setDescriptif()
+  // Tests sur la méthode setDescriptif
   @Test
   void testSetDescriptifCorrect() {
     assertEquals(1, evenement.setDescriptif("Repas buffet"));
+  }
+  
+  @Test
+  void testSetDescriptifNull() {
+    assertEquals(-1, evenement.setDescriptif(null));
   }
 
   @Test
@@ -50,7 +60,7 @@ class EvenementTest {
   }
 
 
-  // Tests sur la méthode setImage()
+  // Tests sur la méthode setImage
   @Test
   void testSetImageCorrect() {
     assertEquals(1, evenement.setImage("img2.jpg"));
@@ -67,10 +77,15 @@ class EvenementTest {
   }
 
 
-  // Tests sur la méthode setDateHoraire()
+  // Tests sur la méthode setDateHoraire
+  @Test
+  void testSetDateHoraireNull() {
+    assertEquals(-1, evenement.setDateHoraire(null));
+  }
+  
   @Test
   void testSetDateHoraireAvantLaCourrante() {
-    assertEquals(-1, evenement.setDateHoraire(LocalDateTime.of(2021, Month.JUNE, 20, 13, 45, 30)));
+    assertEquals(-1, evenement.setDateHoraire(LocalDateTime.of(2022, Month.JUNE, 25, 15, 0, 0)));
   }
 
   @Test
@@ -79,10 +94,15 @@ class EvenementTest {
   }
 
 
-  // Tests sur la méthode setNomLieu()
+  // Tests sur la méthode setNomLieu
   @Test
   void testSetNomLieuCorrect() {
     assertEquals(1, evenement.setNomLieu("Place liberté"));
+  }
+  
+  @Test
+  void testSetNomLieuNull() {
+    assertEquals(-1, evenement.setNomLieu(null));
   }
 
   @Test
@@ -96,10 +116,15 @@ class EvenementTest {
   }
 
 
-  // Tests sur la méthode setDescriptifLieu()
+  // Tests sur la méthode setDescriptifLieu
   @Test
   void testSetDescriptifLieuCorrect() {
     assertEquals(1, evenement.setDescriptifLieu("centre ville"));
+  }
+  
+  @Test
+  void testSetDescriptifLieuNull() {
+    assertEquals(-1, evenement.setDescriptifLieu(null));
   }
 
   @Test
@@ -112,10 +137,16 @@ class EvenementTest {
     assertEquals(-1, evenement.setDescriptifLieu("  "));
   }
 
-  // Tests sur la méthode setLienLieu()
+  
+  // Tests sur la méthode setLienLieu
   @Test
   void testSetLienLieuCorrect() {
     assertEquals(1, evenement.setLienLieu("map.google.liberte.com"));
+  }
+  
+  @Test
+  void testSetLienLieuNull() {
+    assertEquals(-1, evenement.setLienLieu(null));
   }
 
   @Test
@@ -127,8 +158,20 @@ class EvenementTest {
   void testSetLienLieuPasVisible() {
     assertEquals(-1, evenement.setLienLieu("  "));
   }
-
-  // Tests sur la méthode setNombreMaxPersonne()
+  
+  
+  // Tests sur la méthode setType
+  @Test
+  void testSetTypeNull() {
+    assertEquals(-1, evenement.setType(null));
+  }
+  
+  @Test
+  void testSetTypeCorrect() {
+    assertEquals(1, evenement.setType(TypeEvenement.ANIMATION));
+  }
+  
+  // Tests sur la méthode setNombreMaxPersonne
   @Test
   void testSetNombreMaxPersonneCorrecte() {
     assertEquals(1, evenement.setNombreMaxPersonne(10));

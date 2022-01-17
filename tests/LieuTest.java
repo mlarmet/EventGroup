@@ -9,10 +9,15 @@ class LieuTest {
 
   Lieu lieu = new Lieu("Hotel de ville", "centre ville", "google.map.hotelville.com");
 
-  // Tests la méthode setNom()
+  // Tests la méthode setNom
   @Test
   void testSetNomCorrect() {
     assertEquals(1, lieu.setNom("Place Rodez"));
+  }
+  
+  @Test
+  void testSetNomNull() {
+    assertEquals(-1, lieu.setNom(null));
   }
 
   @Test
@@ -25,10 +30,15 @@ class LieuTest {
     assertEquals(-1, lieu.setNom("  "));
   }
 
-  // Tests la méthode setDescriptif()
+  // Tests la méthode setDescriptif
   @Test
   void testSetDescriptifCorrect() {
     assertEquals(1, lieu.setDescriptif("proches des restaurants"));
+  }
+  
+  @Test
+  void testSetDescriptifNull() {
+    assertEquals(-1, lieu.setDescriptif(null));
   }
 
   @Test
@@ -41,10 +51,15 @@ class LieuTest {
     assertEquals(-1, lieu.setDescriptif("  "));
   }
 
-  // Tests la méthode setLien()
+  // Tests la méthode setLien
   @Test
   void testSetLienCorrect() {
     assertEquals(1, lieu.setLien("proches des restaurants"));
+  }
+  
+  @Test
+  void testSetLienNull() {
+    assertEquals(-1, lieu.setLien(null));
   }
 
   @Test
