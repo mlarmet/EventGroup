@@ -41,9 +41,6 @@ public class RootController {
         divider.setPosition(0.15);
       }
     });
-    
-    //calendarImgView.setImage(new Image("file:resources/icon-calendrier.png"));
-    
 
     this.showMembreView();
   }
@@ -81,7 +78,7 @@ public class RootController {
       rightPane.getChildren().add(evenement);
 
       EvenementController controller = loader.getController();
-      controller.setMainApp(mainApp);
+      controller.setMainApp(mainApp.getMainApp());
 
 
     } catch (IOException e) {
@@ -112,7 +109,7 @@ public class RootController {
       rightPane.getChildren().add(membre);
 
       MembreController controller = loader.getController();
-      controller.setMainApp(mainApp);
+      controller.setMainApp(this.mainApp);
 
     } catch (IOException e) {
       e.printStackTrace();

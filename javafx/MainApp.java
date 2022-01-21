@@ -1,5 +1,6 @@
 package eventgroup;
 
+import eventgroup.model.GestionEvenements;
 import eventgroup.view.RootController;
 import java.io.IOException;
 import javafx.application.Application;
@@ -12,7 +13,7 @@ import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
 /** Appliation javafx. */
-public class MainApp extends Application {
+public class MainApp extends Application implements GestionEvenements {
 
   private Stage primaryStage;
   private SplitPane rootLayout;
@@ -34,7 +35,7 @@ public class MainApp extends Application {
 
       // Show the scene containing the root layout.
       Scene scene = new Scene(rootLayout);
-      
+
 
       primaryStage.setScene(scene);
       primaryStage.setResizable(false);
@@ -94,7 +95,15 @@ public class MainApp extends Application {
     return primaryStage;
   }
 
+  /** Methode principale de l'application. */
   public static void main(String[] args) {
     launch(args);
+    //ne rien ecrire ici
+    //code execute uniquement lorsque la fenetre est fermée
+  }
+
+
+  public MainApp getMainApp() {
+    return this;
   }
 }
