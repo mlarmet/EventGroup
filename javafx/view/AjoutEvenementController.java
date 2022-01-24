@@ -99,12 +99,12 @@ public class AjoutEvenementController {
             try {
               h = Integer.parseInt(heure.getText());
               min = Integer.parseInt(minutes.getText());
-              
+
               if (h >= 1 && h <= 24 && min >= 0 && min <= 59) {
                 LocalDateTime dateHoraire = LocalDateTime.of(date.getValue().getYear(),
                     date.getValue().getMonth(), date.getValue().getDayOfMonth(), h, min, 0);
-                                
 
+                evenement.setDateHoraire(dateHoraire);
                 if (evenement.setNomLieu(nomLieu.getText()) == 1) {
                   if (evenement.setDescriptif(descriptifLieu.getText()) == 1) {
                     if (evenement.setLienLieu(lienGoogle.getText()) == 1) {
@@ -113,7 +113,7 @@ public class AjoutEvenementController {
                         if (evenement.setNombreMaxPersonne(nbr) == 1) {
                           res = GestionEvenements.ajouterEvenement(evenement);
                           this.dialogstage.close();
-                          
+
 
                           if (res == -1) {
                             message.setTextFill(Color.RED);

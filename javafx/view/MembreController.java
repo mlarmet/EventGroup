@@ -50,8 +50,13 @@ public class MembreController {
 
   private boolean popupOpen;
 
+  /** Controller membre. */
   public MembreController() {
     popupOpen = false;
+    GestionEvenements.ajouterMembre("larmet", "maxence", "mail", "mlarmet", "motdepase", "brest",
+        new Date(), "stbrieuc");
+    GestionEvenements.ajouterMembre("larmet", "maxence", "mail", "larmetma", "motdepase", "brest",
+        new Date(), "stbrieuc");
   }
 
   /**
@@ -96,14 +101,14 @@ public class MembreController {
                 } else {
                   ImageView btnEdit = new ImageView(new Image("file:resources/icon-modifier.png"));
                   ImageView btnSup = new ImageView(new Image("file:resources/icon-supprimer.png"));
-                  
+
                   btnEdit.setCursor(Cursor.HAND);
                   btnSup.setCursor(Cursor.HAND);
-                  
-                  //permet de clicker sur les parties transparentes des images
+
+                  // permet de clicker sur les parties transparentes des images
                   btnEdit.setPickOnBounds(true);
                   btnSup.setPickOnBounds(true);
-                  
+
                   btnEdit.setFitHeight(25);
                   btnEdit.setFitWidth(25);
 
@@ -148,12 +153,6 @@ public class MembreController {
 
     colAction.setCellFactory(cellFactory);
 
-
-
-    GestionEvenements.ajouterMembre("larmet", "maxence", "mail", "mlarmet", "motdepase", "brest",
-        new Date(), "stbrieuc");
-    GestionEvenements.ajouterMembre("larmet", "maxence", "mail", "larmetma", "motdepase", "brest",
-        new Date(), "stbrieuc");
 
     this.reloadTableMembre();
 
